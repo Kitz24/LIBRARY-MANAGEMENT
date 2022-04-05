@@ -1,0 +1,6 @@
+Date,Roll NO,Name of the user,Designation,Time_in,Time_out,Duration
+2020-01-01,1,Raju,BCA,01:01:01,02:02:02,60000
+2020-01-01,2,Manu,BCA,02:01:01,03:02:02,60000
+2020-01-02,3,Rajesh,BCOM,03:01:01,04:02:02,65000
+2020-01-03,4,Manju,BBA,04:01:01,05:02:02,65030
+2020-01-03,4,Manju,BBA,05:01:01,05:02:02,33030
