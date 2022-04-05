@@ -4,6 +4,7 @@ import os
 
 t=[]
 cd=str(os.getcwd())
+print(cd)
 def create():
 	conn = sqlite3.connect("My_DB.db")
 	c = conn.cursor()
@@ -116,7 +117,7 @@ def best_user(l):
 	w.writerow(o)
 	conn = sqlite3.connect("My_DB.db")
 	c = conn.cursor()
-	c.execute("SELECT Roll_No, Name_of_the_user , SUM(Duration), COUNT(Roll_No) FROM lib GROUP BY Roll_No HAVING COUNT(Roll_No) >= 1;")
+	c.execute("SELECT Roll_No, Name_of_the_user , SUM(Duration), COUNT(Roll_No) FROM lib GROUP BY Roll_No HAVING COUNT(Roll_No) >= 1 ORDER BY SUM(DURATION) DESC;")
 	
 	for u in c:
 		w.writerow(u)
