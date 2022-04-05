@@ -1,7 +1,9 @@
 import tkinter
 from PIL import ImageTk, Image
 from back_end import report_generation, average, best_user
+import os
 
+l=0
 
 def minimize(window):
     window.attributes("-fullscreen", False)
@@ -48,7 +50,7 @@ gen.place(relx=0.10, rely=0.65)
 avg = tkinter.Button(cvs, text="AVERAGE\nREPORT\nSTATISTICS", bg="#B5164E", fg="#FFFFFF", font="Helvetica 20 bold", width=15, height=3, command=lambda:average(f, t))
 avg.place(relx=0.30, rely=0.65)
 
-usr = tkinter.Button(cvs, text="BEST\nLIBRARY\nUSER", bg="#B5164E", fg="#FFFFFF", font="Helvetica 20 bold", width=15, height=3, command=best_user())
+usr = tkinter.Button(cvs, text="BEST\nLIBRARY\nUSER", bg="#B5164E", fg="#FFFFFF", font="Helvetica 20 bold", width=15, height=3, command=lambda:best_user(l))
 usr.place(relx=0.65, rely=0.65)
 
 win.mainloop()

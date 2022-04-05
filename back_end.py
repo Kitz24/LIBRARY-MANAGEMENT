@@ -1,7 +1,9 @@
 import sqlite3
 import csv
+import os
 
 t=[]
+cd=str(os.getcwd())
 def create():
 	conn = sqlite3.connect("My_DB.db")
 	c = conn.cursor()
@@ -64,6 +66,7 @@ def report_generation(from_date,to_date): #to generate reports from a given rang
 	result=c.fetchall()
 	for i in result:
 		r.writerow(i)
+	os.startfile(cd+"\ReportGeneration.csv")
 	f.close()
 	conn.close()
 
@@ -91,6 +94,7 @@ def average(from_date,to_date): #report of average per day usage for a given tim
 		w.writerow(g)
 		t=[]
 	#c.execute("""SELECT Date, AVG(duration) FROM (SELECT Date, Time in, Time out, sum(Duration) FROM lib GROUP BY Date) GROUP BY Date;""")
+	os.startfile(cd+"\\average_user.csv")
 	f.close()
 	conn.close()
 
@@ -105,7 +109,7 @@ def sectoday(time):
 		#print("day:hrs:min:sec-> %d:%d:%d:%d" % (day, hour, minutes, seconds))
 		return day,hour,minutes,seconds
 
-def best_user():
+def best_user(l):
 	f = open("Best user4.csv", mode="w")
 	w = csv.writer(f)
 	o=("Roll No", "Name of the user", "Duration stayed", "No of visits")
@@ -118,7 +122,7 @@ def best_user():
 		w.writerow(u)
 	f.close()
 	conn.close()
-
+	k=os.startfile(cd+"\\Best user4.csv")
 
 
 
